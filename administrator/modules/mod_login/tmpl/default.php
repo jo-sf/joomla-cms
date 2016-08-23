@@ -11,9 +11,13 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
-JHtml::_('formbehavior.chosen');
 $usersConfig = JComponentHelper::getParams('com_users');
 
+// Load chosen if we have language selector, ie, more than one administrator language installed and enabled.
+if ($langs)
+{
+	JHtml::_('formbehavior.chosen', '.advancedSelect');
+}
 ?>
 <form action="<?php echo JRoute::_('index.php', true, $usersConfig->get('usesecure')); ?>" method="post" id="form-login" class="form-inline">
 	<fieldset class="loginform">

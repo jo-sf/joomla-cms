@@ -11,7 +11,6 @@
 defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
-
 ?>
 <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
 <?php if ($params->get('greeting')) : ?>
@@ -19,7 +18,7 @@ JHtml::_('behavior.keepalive');
 	<?php if ($params->get('name') == 0) : ?>
 		<?php echo JText::sprintf('MOD_LOGIN_HINAME', htmlspecialchars($user->get('name'), ENT_COMPAT, 'UTF-8')); ?>
 	<?php else : ?>
-		<?php echo JText::sprintf('MOD_LOGIN_HINAME', htmlspecialchars($user->get('username'), ENT_COMPAT, 'UTF-8')); ?>
+	 	<?php echo JText::sprintf('MOD_LOGIN_HINAME', htmlspecialchars($user->get('username'), ENT_COMPAT, 'UTF-8')); ?>
 	<?php endif; ?>
 	</div>
 <?php endif; ?>
